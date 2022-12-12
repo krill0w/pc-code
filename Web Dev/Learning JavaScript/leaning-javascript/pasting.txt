@@ -1,0 +1,11 @@
+    <button onclick="giveMeYourName()">What is your name?</button>
+    <button onclick="addition()">Addition</button>
+    <button onclick="justTheNonsense()">Long</button>
+    <button onclick="nameOfJavascript()">Question</button>
+    <button onclick="numberChecker()">Number Checker</button>
+    <button onlick="officeHours()">Office Hours</button>
+    <p>You should click them, you know you want to.</p>
+    <p>Go on, do it</p>
+    <p>Pretty Please?</p>
+    <p>It looks a bit boring doesn't it</p>
+    <p>Some CSS would be neat</p>

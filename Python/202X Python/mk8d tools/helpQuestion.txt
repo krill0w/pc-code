@@ -1,0 +1,32 @@
+Basically I'm trying to remove the row index and I think the type information (bottom line of output) from the variable 'speed'. The code
+is meant to retrieve information from a csv file at a certain location, but I only want the value of that location (1.5), rather than the rest of it
+
+Code:
+def statRetriever():
+    statType = int(input("Would you like the stats of a:\n\t1. Kart\n\t2. Wheel\n\t3. Glider\n\t4. Character\nEnter your number here: "))
+    if statType == 1:
+        openCSV = pd.read_csv("kartStats.csv")
+        kartName = input("Enter the name of the kart you wants stats for: ")
+        rowNum = openCSV.index[openCSV['Name'] == kartName].tolist() # this gets the index/row number of the row where the kart name is equal to the user inputed one
+        speed = openCSV.iloc[rowNum,1] # iloc can take integers in lists!
+        print(f"{kartName}\n--Speed: {speed}")
+
+
+
+Output:
+
+Mario Kart 8 Deluxe Toolkit
+Which tool would you like to use?
+        1. Randomiser
+        2. Stat Viewer
+Enter your number here: 2
+Would you like the stats of a:
+        1. Kart
+        2. Wheel
+        3. Glider
+        4. Character
+Enter your number here: 1
+Enter the name of the kart you wants stats for: Mach 8
+Mach 8
+--Speed: 2   1.5
+Name: Speed, dtype: float64

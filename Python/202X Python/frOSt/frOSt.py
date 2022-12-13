@@ -37,8 +37,8 @@ while loop == 1:
   if command == 'help':
     print("hello {name} | Says hello to you (how exciting)\n")
     loop = 1
-  elif command == 'hello':
-    print('Hello!\n')
+  elif command in "hello":
+    print(f'Hello {arr(command.split)}') #finish this line, is meant to greet by name
     loop = 1
   elif command == 'exit' or command == 'shutdown':
     print('Shutting Down....\n')

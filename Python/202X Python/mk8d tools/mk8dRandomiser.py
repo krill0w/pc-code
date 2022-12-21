@@ -158,11 +158,11 @@ track = [
 
 		'Leaf Cup: Wario Stadium',
 		'Leaf Cup: Sherbert Land',
-		'Leaf Cup: Music Park',
+		'Leaf Cup: Melody Motorway',
 		'Leaf Cup: Yoshi Valley',
 
 		'Lightning Cup: Tick-Tock Clock',
-		'Lightning Cup: Piranha Plant Slide',
+		'Lightning Cup: Piranha Plant Pipeway',
 		'Lightning Cup: Grumble Volcano',
 		'Lightning Cup: Rainbow Road',
 
@@ -196,27 +196,40 @@ track = [
 		'Lucky Cat Cup: Sky Garden',
 		'Lucky Cat Cup: Ninja Hideaway',
 
-                'Turnip Cup: New York Minute',
-                'Turnip Cup: Mario Circuit 3',
-                'Turnip Cup: Kalimari Desert',
-                'Turnip Cup: Waluigi Pinball',
+		'Turnip Cup: New York Minute',
+		'Turnip Cup: Mario Circuit 3',
+		'Turnip Cup: Kalimari Desert',
+		'Turnip Cup: Waluigi Pinball',
 
-                'Propeller Cup: Sidney Sprint',
-                'Propeller Cup: Snow Land',
-                'Propeller Cup: Mushroom Gorge',
-                'Propeller Cup: Sky-High Sundae',
+		'Propeller Cup: Sidney Sprint',
+		'Propeller Cup: Snow Land',
+		'Propeller Cup: Mushroom Gorge',
+		'Propeller Cup: Sky-High Sundae',
 
-                'Rock Cup: London Loop',
-                'Rock Cup: Boo Lake',
-                'Rock Cup: Alpine Pass',
-                'Rock Cup: Maple Treeway',
+		'Rock Cup: London Loop',
+		'Rock Cup: Boo Lake',
+		'Rock Cup: Alpine Pass',
+		'Rock Cup: Maple Treeway',
 
-                'Moon Cup: Berlin Byways',
-                'Moon Cup: Peach Gardens',
-                'Moon Cup: Merry Mountain',
-                'Moon Cup: Rainbow Road'
+		'Moon Cup: Berlin Byways',
+		'Moon Cup: Peach Gardens',
+		'Moon Cup: Merry Mountain',
+		'Moon Cup: Rainbow Road'
 	]
 
+
+# Custom Cups
+
+CUSTOMfoodDoubleCup = [
+		    'Mushroom Cup: Sweet Sweet Canyon',
+        	    'Crossing Cup: Cheese Land',
+		    'Leaf Cup: Sherbet Land',
+		    'Golden Dash Cup: Choco Mountain',
+		    'Lucky Cat Cup: Shroom Ridge',
+		    'Turnip Cup: Kalimari Desert',
+		    'Propeller Cup: Mushroom Gorge',
+		    'Rock Cup: Maple Treeway'
+			]
 
 
 def randomiser():
@@ -226,7 +239,8 @@ def randomiser():
 	# logic
 	print("Mario Kart 8 Deluxe Randomiser")
 	players = int(input("Enter the number of players [1-4]: "))
-	numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48]: "))
+	customCupQuery = input("Would you like to use one of our custom cups? [Y, N]: ").upper()
+	if customCupQuery == 'N': numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48]: "))
 	while x != players:
 		x += 1
 		characterRoll = choice(character)
@@ -234,9 +248,18 @@ def randomiser():
 		wheelRoll = choice(wheels)
 		gliderRoll = choice(glider)
 		print(f"\nPlayer {x}\n--Character: {characterRoll}\n--Kart: {kartRoll}\n--Wheels: {wheelRoll}\n--Glider: {gliderRoll}\n")
-	for x in range(numOfTracks):
-		trackRoll = choice(track)
-		print(f"\nTrack {x+1} is: {trackRoll}")
+	print("Press enter to continue to the tracks: ")
+	input()
+	if customCupQuery == 'N':
+		for x in range(numOfTracks):
+			trackRoll = choice(track)
+			print(f"\nTrack {x+1} is: {trackRoll}")
+	elif customCupQuery == 'Y':
+		cupLengthQuery = input("Enter the length of cup you would like to play [[T]iny (3), [S]ingle (4), [D]ouble (8)]: ").upper()
+		if cupLengthQuery == 'D':
+			print("We only have one double cup currently: \nTHE FOOD DOUBLE CUP")
+			for i in range(len(CUSTOMfoodDoubleCup)):
+				print(f"\n\nTrack {i+1}: \n{CUSTOMfoodDoubleCup[i]}")
 
 def statRetriever():
 	statType = int(input("Would you like the stats of a:\n\t1. Kart\n\t2. Wheel\n\t3. Glider\n\t4. Character\nEnter your number here: "))
@@ -309,4 +332,3 @@ elif tool == 3:
 #TODO add error handling to the randomiser
 	#TODO this could include only allowing the given number of tracks, correcting the wrong type inputted for either input
 	#TODO or asking if they want to roll again
-

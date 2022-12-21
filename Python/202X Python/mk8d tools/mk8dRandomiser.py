@@ -223,33 +223,33 @@ track = [
 # Custom Cups
 
 CUSTOMdoubleFoodCup = [
-		    'Mushroom Cup: Sweet Sweet Canyon',
-        	    'Crossing Cup: Cheese Land',
-		    'Leaf Cup: Sherbet Land',
-		    'Golden Dash Cup: Choco Mountain',
-		    'Lucky Cat Cup: Shroom Ridge',
-		    'Turnip Cup: Kalimari Desert',
-		    'Propeller Cup: Mushroom Gorge',
-		    'Rock Cup: Maple Treeway'
-			]
+	'Mushroom Cup: Sweet Sweet Canyon',
+	'Crossing Cup: Cheese Land',
+	'Leaf Cup: Sherbet Land',
+	'Golden Dash Cup: Choco Mountain',
+	'Lucky Cat Cup: Shroom Ridge',
+	'Turnip Cup: Kalimari Desert',
+	'Propeller Cup: Mushroom Gorge',
+	'Rock Cup: Maple Treeway'
+	]
 
 CUSTOMtinyWaterCup = [
-        'Mushroom Cup: Water Park',
+	'Mushroom Cup: Water Park',
 	'Star Cup: Dolphin Shoals',
 	'Shell Cup: Cheep Cheep Beach'
 	]
 
 CUSTOMtinyDesertCup = [
-		'Banana Cup: Dry Dry Desert',
-		'Crossing Cup: Cheese Land',
-		'Special Cup: Bone Dry Dunes'
-		]
+	'Banana Cup: Dry Dry Desert',
+	'Crossing Cup: Cheese Land',
+	'Special Cup: Bone Dry Dunes'
+	]
 
 CUSTOMtinyIceCup = [
-		'Crossing Cup: Animal Crossing (Winter ZR)',
-		'Leaf Cup: Sherbet Land',
-		'Triforce Cup: Ice Ice Outpost'
-		]
+	'Crossing Cup: Animal Crossing (Winter ZR)',
+	'Leaf Cup: Sherbet Land',
+	'Triforce Cup: Ice Ice Outpost'
+	]
 
 def randomiser():
 	# variable setup
@@ -267,18 +267,24 @@ def randomiser():
 		wheelRoll = choice(wheels)
 		gliderRoll = choice(glider)
 		print(f"\nPlayer {x}\n--Character: {characterRoll}\n--Kart: {kartRoll}\n--Wheels: {wheelRoll}\n--Glider: {gliderRoll}\n")
-	print("Press enter to continue to the tracks: ")
+	print("Press enter to continue to the tracks, and then again to reveal the next track: ")
 	input()
 	if customCupQuery == 'N':
 		for x in range(numOfTracks):
 			trackRoll = choice(track)
 			print(f"\nTrack {x+1} is: {trackRoll}")
+			input()
 	elif customCupQuery == 'Y':
 		cupLengthQuery = input("Enter the length of cup you would like to play [[T]iny (3), [S]ingle (4), [D]ouble (8)]: ").upper()
+		if cupLengthQuery == 'T':
+			cupChoice = int(input("Enter the number corresponding to one of the following cups:\n\t1. Water Cup\n\t2. Desert Cup\n\t3. Ice Cup\n> "))
+			if cupChoice == 1:
+				print('\n'*1000 + "THE TINY WATER CUP")
+				for i in range(len(CUSTOMtinyWaterCup)): input(f"\nTrack {i+1}\n{CUSTOMtinyWaterCup[i]}")
 		if cupLengthQuery == 'D':
 			print("We only have one double cup currently: \nTHE FOOD DOUBLE CUP")
-			for i in range(len(CUSTOMfoodDoubleCup)):
-				print(f"\n\nTrack {i+1}: \n{CUSTOMfoodDoubleCup[i]}")
+			for i in range(len(CUSTOMdoubleFoodCup)):
+				print(f"\n\nTrack {i+1}: \n{CUSTOMdoubleFoodCup[i]}")
 
 def statRetriever():
 	statType = int(input("Would you like the stats of a:\n\t1. Kart\n\t2. Wheel\n\t3. Glider\n\t4. Character\nEnter your number here: "))

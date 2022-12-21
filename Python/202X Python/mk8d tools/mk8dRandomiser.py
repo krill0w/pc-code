@@ -231,6 +231,10 @@ CUSTOMfoodDoubleCup = [
 		    'Rock Cup: Maple Treeway'
 			]
 
+CUSTOMtinyWaterCup = [
+        'Mushroom Cup: Water Park',
+        ''
+
 
 def randomiser():
 	# variable setup

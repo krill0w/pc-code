@@ -59,8 +59,8 @@ kart = [
 		'Prancer',
 		'Buggybud',
 		'Landship',
-		'Sneeker',
-		'Sports Coupe',
+		'Bounder',
+		'Sports Coupé',
 		'GLA',
 		'W 25 Silver Arrow',
 		'300 SL Roadster',
@@ -76,12 +76,12 @@ kart = [
 		'The Duke',
 		'Flame Rider',
 		'Varmint',
-		'Mr. Scooty',
+		'Mr Scooty',
 		'Jet Bike',
 		'Yoshi Bike',
 		'Master Cycle',
 		'City Tripper',
-		'Standard ATV',
+		'Standard Quad',
 		'Wild Wiggler',
 		'Teddy Buggy',
 		'Bone Rattler',
@@ -98,17 +98,18 @@ wheels = [
 		'Button',
 		'Off-Road',
 		'Sponge',
-		'Wood',
+		'Woodden',
 		'Cushion',
-		'Blue Normal',
-		'Hot Monster',
+		'Normal Blue ',
+		'Funky Monster',
 		'Azure Roller',
 		'Crimson Slim',
 		'Cyber Slick',
 		'Retro Off-Road',
-		'GLA Tires',
-		'Triforce Tires',
-		'Leaf Tires',
+		'GLA Wheels',
+		'Triforce Tyres',
+		'Ancient Tyres',
+		'Leaf Tyres'
 	]
 glider = [
 		'Super Glider',
@@ -123,6 +124,7 @@ glider = [
 		'Plane Glider',
 		'MKTV Parafoil',
 		'Hylian Kite',
+		'Paraglider',
 		'Paper Glider',
 	]
 track = [
@@ -220,7 +222,7 @@ track = [
 
 # Custom Cups
 
-CUSTOMfoodDoubleCup = [
+CUSTOMdoubleFoodCup = [
 		    'Mushroom Cup: Sweet Sweet Canyon',
         	    'Crossing Cup: Cheese Land',
 		    'Leaf Cup: Sherbet Land',
@@ -233,8 +235,21 @@ CUSTOMfoodDoubleCup = [
 
 CUSTOMtinyWaterCup = [
         'Mushroom Cup: Water Park',
-        ''
+	'Star Cup: Dolphin Shoals',
+	'Shell Cup: Cheep Cheep Beach'
+	]
 
+CUSTOMtinyDesertCup = [
+		'Banana Cup: Dry Dry Desert',
+		'Crossing Cup: Cheese Land',
+		'Special Cup: Bone Dry Dunes'
+		]
+
+CUSTOMtinyIceCup = [
+		'Crossing Cup: Animal Crossing (Winter ZR)',
+		'Leaf Cup: Sherbet Land',
+		'Triforce Cup: Ice Ice Outpost'
+		]
 
 def randomiser():
 	# variable setup

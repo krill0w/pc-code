@@ -241,7 +241,7 @@ CUSTOMtinyWaterCup = {
 	"Track 2": 'Star Cup: Dolphin Shoals',
 	"Track 3": 'Shell Cup: Cheep Cheep Beach'
 }
-CUSTOMtinyCups.append(CUSTOMtinyWaterCup) # i couldn't think of a neater way to this i'm so sorry if anyone finds this
+CUSTOMtinyCups.append(CUSTOMtinyWaterCup) # i couldn't think of a neater way to this i'm so sorry if anyone finds this please lmk a better way
 
 CUSTOMtinyDesertCup = {
 	"Name": 'Desert Cup',
@@ -259,10 +259,18 @@ CUSTOMtinyIceCup = {
 	}
 CUSTOMtinyCups.append(CUSTOMtinyIceCup)
 
+CUSTOMtinyForestCup = {
+	"Name": 'Forest Cup',
+	"Track 1": 'Banana Cup: DK Jungle',
+	"Track 2": 'Mushroom Cup: Thwomp Ruins',
+	"Track 3": 'Crossing Cup: Wild Woods'
+}
+CUSTOMtinyCups.append(CUSTOMtinyForestCup)
 
 def randomiser():
 	# variable setup
 	x = 0
+	duplicates = []
 
 	# logic
 	print("Mario Kart 8 Deluxe Randomiser")
@@ -276,22 +284,25 @@ def randomiser():
 		wheelRoll = choice(wheels)
 		gliderRoll = choice(glider)
 		print(f"\nPlayer {x}\n--Character: {characterRoll}\n--Kart: {kartRoll}\n--Wheels: {wheelRoll}\n--Glider: {gliderRoll}\n")
-	print("Press enter to continue to the tracks, and then again to reveal the next track: ")
-	input()
+	if customCupQuery == 'N':
+		print("Press enter to continue to the tracks, and then again to reveal the next track: ") # had to add the if statement so that it would only show up now cause it wouldn't make sense otherwise
+		input()
 	if customCupQuery == 'N':
 		for x in range(numOfTracks):
 			trackRoll = choice(track)
-			print(f"\nTrack {x+1} is: {trackRoll}")
-			input()
+			if trackRoll in duplicates: trackRoll = choice(track)
+			duplicates.append(trackRoll)
+			print(f"\nTrack {x+1}\n{trackRoll}")
+			if x+1 != numOfTracks: input()
+		print(len(duplicates))
 	elif customCupQuery == 'Y':
 		cupLengthQuery = input("Enter the length of cup you would like to play [[T]iny (3), [S]ingle (4), [D]ouble (8)]: ").upper()
 		if cupLengthQuery == 'T':
-			print("Enter the number corresponding to one of the following cups:")
+			print("Enter the number corresponding to one of the following cups > ")
 			for i in range(len(CUSTOMtinyCups)): print(f"\t{i+1}. {CUSTOMtinyCups[i]['Name']}")
 			cupChoice = int(input("> "))
-			if cupChoice == 1:
-				print('\n'*1000 + "THE TINY WATER CUP")
-				for i in range(len(CUSTOMtinyWaterCup)-1): print(f"\nTrack {i+1}\n{CUSTOMtinyWaterCup[f'Track {i+1}']}")
+			print('\n'*1000 + f"THE TINY {CUSTOMtinyCups[cupChoice-1]['Name'].upper()}")
+			for i in range(len(CUSTOMtinyCups[0])-1): input(f"\nTrack {i+1}\n{CUSTOMtinyCups[cupChoice-1][f'Track {i+1}']}")
 		if cupLengthQuery == 'D':
 			print("We only have one double cup currently: \nTHE FOOD DOUBLE CUP")
 			for i in range(len(CUSTOMdoubleFoodCup)):
@@ -366,5 +377,5 @@ elif tool == 3:
 
 
 #TODO add error handling to the randomiser
-	#TODO this could include only allowing the given number of tracks, correcting the wrong type inputted for either input
-	#TODO or asking if they want to roll again
+#TODO this could include only allowing the given number of tracks, correcting the wrong type inputted for either input
+#TODO or asking if they want to roll again

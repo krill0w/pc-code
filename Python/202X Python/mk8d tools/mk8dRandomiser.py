@@ -57,7 +57,7 @@ kart = [
 		'Tri-Speeder',
 		'Badwagon',
 		'Prancer',
-		'Biddybuggy',
+		'Buggybud',
 		'Landship',
 		'Sneeker',
 		'Sports Coupe',
@@ -89,7 +89,7 @@ kart = [
 		'Ink Striker',
 	]
 wheels = [
-		'Standard',
+		'Normal',
 		'Monster',
 		'Roller',
 		'Slim',
@@ -100,7 +100,7 @@ wheels = [
 		'Sponge',
 		'Wood',
 		'Cushion',
-		'Blue Standard',
+		'Blue Normal',
 		'Hot Monster',
 		'Azure Roller',
 		'Crimson Slim',
@@ -142,7 +142,7 @@ track = [
 		'Star Cup: Mount Wario',
 
 		'Special Cup: Cloudtop Cruise',
-		'Special Cup: Bone-Dry Dunes',
+		'Special Cup: Bone Dry Dunes',
 		'Special Cup: Bowser\'s Castle',
 		'Special Cup: Rainbow Road',
 
@@ -181,7 +181,7 @@ track = [
 		'Crossing Cup: Wild Woods',
 		'Crossing Cup: Animal Crossing',
 
-		'Bell Cup: Neo Bowser City',
+		'Bell Cup: Koopa City',
 		'Bell Cup: Ribbon Road',
 		'Bell Cup: Super Bell Subway',
 		'Bell Cup: Big Blue',
@@ -195,6 +195,26 @@ track = [
 		'Lucky Cat Cup: Shroom Ridge',
 		'Lucky Cat Cup: Sky Garden',
 		'Lucky Cat Cup: Ninja Hideaway',
+
+                'Turnip Cup: New York Minute',
+                'Turnip Cup: Mario Circuit 3',
+                'Turnip Cup: Kalimari Desert',
+                'Turnip Cup: Waluigi Pinball',
+
+                'Propeller Cup: Sidney Sprint',
+                'Propeller Cup: Snow Land',
+                'Propeller Cup: Mushroom Gorge',
+                'Propeller Cup: Sky-High Sundae',
+
+                'Rock Cup: London Loop',
+                'Rock Cup: Boo Lake',
+                'Rock Cup: Alpine Pass',
+                'Rock Cup: Maple Treeway',
+
+                'Moon Cup: Berlin Byways',
+                'Moon Cup: Peach Gardens',
+                'Moon Cup: Merry Mountain',
+                'Moon Cup: Rainbow Road'
 	]
 
 

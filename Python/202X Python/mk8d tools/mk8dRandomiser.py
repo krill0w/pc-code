@@ -233,23 +233,32 @@ CUSTOMdoubleFoodCup = [
 	'Rock Cup: Maple Treeway'
 	]
 
-CUSTOMtinyWaterCup = [
-	'Mushroom Cup: Water Park',
-	'Star Cup: Dolphin Shoals',
-	'Shell Cup: Cheep Cheep Beach'
-	]
+CUSTOMtinyCups = []
 
-CUSTOMtinyDesertCup = [
-	'Banana Cup: Dry Dry Desert',
-	'Crossing Cup: Cheese Land',
-	'Special Cup: Bone Dry Dunes'
-	]
+CUSTOMtinyWaterCup = {
+	"Name": 'Water Cup',
+	"Track 1": 'Mushroom Cup: Water Park',
+	"Track 2": 'Star Cup: Dolphin Shoals',
+	"Track 3": 'Shell Cup: Cheep Cheep Beach'
+}
+CUSTOMtinyCups.append(CUSTOMtinyWaterCup) # i couldn't think of a neater way to this i'm so sorry if anyone finds this
 
-CUSTOMtinyIceCup = [
-	'Crossing Cup: Animal Crossing (Winter ZR)',
-	'Leaf Cup: Sherbet Land',
-	'Triforce Cup: Ice Ice Outpost'
-	]
+CUSTOMtinyDesertCup = {
+	"Name": 'Desert Cup',
+	"Track 1": 'Banana Cup: Dry Dry Desert',
+	"Track 2": 'Crossing Cup: Cheese Land',
+	"Track 3": 'Special Cup: Bone Dry Dunes'
+}
+CUSTOMtinyCups.append(CUSTOMtinyDesertCup)
+
+CUSTOMtinyIceCup = {
+	"Name": 'Ice Cup',
+	"Track 1": 'Crossing Cup: Animal Crossing (Winter ZR)',
+	"Track 2":'Leaf Cup: Sherbet Land',
+	"Track 3": 'Triforce Cup: Ice Ice Outpost'
+	}
+CUSTOMtinyCups.append(CUSTOMtinyIceCup)
+
 
 def randomiser():
 	# variable setup
@@ -257,9 +266,9 @@ def randomiser():
 
 	# logic
 	print("Mario Kart 8 Deluxe Randomiser")
-	players = int(input("Enter the number of players [1-4]: "))
-	customCupQuery = input("Would you like to use one of our custom cups? [Y, N]: ").upper()
-	if customCupQuery == 'N': numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48]: "))
+	players = int(input("Enter the number of players [1-4] >  "))
+	customCupQuery = input("Would you like to use one of our custom cups? [Y, N] > ").upper()
+	if customCupQuery == 'N': numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48] > "))
 	while x != players:
 		x += 1
 		characterRoll = choice(character)
@@ -277,14 +286,16 @@ def randomiser():
 	elif customCupQuery == 'Y':
 		cupLengthQuery = input("Enter the length of cup you would like to play [[T]iny (3), [S]ingle (4), [D]ouble (8)]: ").upper()
 		if cupLengthQuery == 'T':
-			cupChoice = int(input("Enter the number corresponding to one of the following cups:\n\t1. Water Cup\n\t2. Desert Cup\n\t3. Ice Cup\n> "))
+			print("Enter the number corresponding to one of the following cups:")
+			for i in range(len(CUSTOMtinyCups)): print(f"\t{i+1}. {CUSTOMtinyCups[i]['Name']}")
+			cupChoice = int(input("> "))
 			if cupChoice == 1:
 				print('\n'*1000 + "THE TINY WATER CUP")
-				for i in range(len(CUSTOMtinyWaterCup)): input(f"\nTrack {i+1}\n{CUSTOMtinyWaterCup[i]}")
+				for i in range(len(CUSTOMtinyWaterCup)-1): print(f"\nTrack {i+1}\n{CUSTOMtinyWaterCup[f'Track {i+1}']}")
 		if cupLengthQuery == 'D':
 			print("We only have one double cup currently: \nTHE FOOD DOUBLE CUP")
 			for i in range(len(CUSTOMdoubleFoodCup)):
-				print(f"\n\nTrack {i+1}: \n{CUSTOMdoubleFoodCup[i]}")
+				input(f"\n\nTrack {i+1}: \n{CUSTOMdoubleFoodCup[i]}")
 
 def statRetriever():
 	statType = int(input("Would you like the stats of a:\n\t1. Kart\n\t2. Wheel\n\t3. Glider\n\t4. Character\nEnter your number here: "))
@@ -345,7 +356,7 @@ def builder():
 
 
 print("Mario Kart 8 Deluxe Toolkit")
-tool = int(input("Which tool would you like to use?\n\t1. Randomiser\n\t2. Stat Viewer\n\t3. Builder\nEnter your number here: "))
+tool = int(input("Which tool would you like to use?\n\t1. Randomiser\n\t2. Stat Viewer\n\t3. Builder\n>  "))
 if tool == 1:
 	randomiser()
 elif tool == 2:

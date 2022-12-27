@@ -1,6 +1,8 @@
 # import packages
 from random import choice
 import pandas as pd
+import os
+from time import sleep
 
 # the big bois
 character = [
@@ -284,43 +286,63 @@ def randomiser():
 	# variable setup
 	x = 0
 	duplicates = []
+	loopCtrl = 1
 
 	# logic
 	print("Mario Kart 8 Deluxe Randomiser")
-	players = int(input("Enter the number of players [1-4] >  "))
-	customCupQuery = input("Would you like to use one of our custom cups? [Y, N] > ").upper()
-	if customCupQuery == 'N': numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48] > "))
-	while x != players:
-		x += 1
-		characterRoll = choice(character)
-		kartRoll = choice(kart)
-		wheelRoll = choice(wheels)
-		gliderRoll = choice(glider)
-		print(f"\nPlayer {x}\n--Character: {characterRoll}\n--Kart: {kartRoll}\n--Wheels: {wheelRoll}\n--Glider: {gliderRoll}\n")
-	if customCupQuery == 'N':
-		print("Press enter to continue to the tracks, and then again to reveal the next track: ") # had to add the if statement so that it would only show up now cause it wouldn't make sense otherwise
-		input()
-	if customCupQuery == 'N':
-		print('\n' * 1000)
-		for x in range(numOfTracks):
-			trackRoll = choice(track)
-			if trackRoll in duplicates: trackRoll = choice(track) # removes duplicates by checking if they have already been added to the array, and then rerolling if it has
-			duplicates.append(trackRoll)
-			print(f"\nTrack {x+1}\n{trackRoll}")
-			if x+1 != numOfTracks: input()
-	elif customCupQuery == 'Y':
-		cupLengthQuery = input("Enter the length of cup you would like to play [[S]ingle (4), [D]ouble (8)]: ").upper()
-		if cupLengthQuery == 'S':
-			print("Enter the number corresponding to one of the following cups > ")
-			for i in range(len(CUSTOMsingleCups)): print(f"\t{i+1}. {CUSTOMsingleCups[i]['Name']}")
-			cupChoice = int(input("> "))
-			print('\n'*1000 + f"THE {CUSTOMsingleCups[cupChoice-1]['Name'].upper()}")
-			for i in range(len(CUSTOMsingleCups[0])-1): input(f"\nTrack {i+1}\n{CUSTOMsingleCups[cupChoice-1][f'Track {i+1}']}")
-		if cupLengthQuery == 'D':
-			print("We only have one double cup currently:")
-			print('\n' * 1000 + "THE FOOD DOUBLE CUP")
-			for i in range(len(CUSTOMdoubleFoodCup)):
-				input(f"\n\nTrack {i+1}: \n{CUSTOMdoubleFoodCup[i]}")
+	while loopCtrl == 1:
+		loopCtrl = 2
+		try:
+			players = int(input("Enter the number of players [1-4] >  "))
+			if players > 4 or players < 1:
+				print("That number was not in the range provided, please try again.")
+				sleep(2)
+				os.system("clear")
+				loopCtrl = 1
+			elif players >= 1 and players <= 4:
+				loopCtrl = 3
+		except ValueError:
+			print("That wasn't a number, please try again.")
+			loopCtrl = 1
+
+	while loopCtrl == 3:
+		customCupQuery = str(input("Would you like to use one of our custom cups? [Y, N] > ")).upper() #! stopped here
+		if customCupQuery not in ('Y', 'N'):
+			print("That isn't a valid option, please try again")
+			sleep(2)
+			loopCtrl = 3
+		if customCupQuery == 'N': numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48] > "))
+		while x != players:
+			x += 1
+			characterRoll = choice(character)
+			kartRoll = choice(kart)
+			wheelRoll = choice(wheels)
+			gliderRoll = choice(glider)
+			print(f"\nPlayer {x}\n--Character: {characterRoll}\n--Kart: {kartRoll}\n--Wheels: {wheelRoll}\n--Glider: {gliderRoll}\n")
+		if customCupQuery == 'N':
+			print("Press enter to continue to the tracks, and then again to reveal the next track: ") # had to add the if statement so that it would only show up now cause it wouldn't make sense otherwise
+			input()
+		if customCupQuery == 'N':
+			print('\n' * 1000)
+			for x in range(numOfTracks):
+				trackRoll = choice(track)
+				if trackRoll in duplicates: trackRoll = choice(track) # removes duplicates by checking if they have already been added to the array, and then rerolling if it has
+				duplicates.append(trackRoll)
+				print(f"\nTrack {x+1}\n{trackRoll}")
+				if x+1 != numOfTracks: input()
+		elif customCupQuery == 'Y':
+			cupLengthQuery = input("Enter the length of cup you would like to play [[S]ingle (4), [D]ouble (8)]: ").upper()
+			if cupLengthQuery == 'S':
+				print("Enter the number corresponding to one of the following cups > ")
+				for i in range(len(CUSTOMsingleCups)): print(f"\t{i+1}. {CUSTOMsingleCups[i]['Name']}")
+				cupChoice = int(input("> "))
+				print('\n'*1000 + f"THE {CUSTOMsingleCups[cupChoice-1]['Name'].upper()}")
+				for i in range(len(CUSTOMsingleCups[0])-1): input(f"\nTrack {i+1}\n{CUSTOMsingleCups[cupChoice-1][f'Track {i+1}']}")
+			if cupLengthQuery == 'D':
+				print("We only have one double cup currently:")
+				print('\n' * 1000 + "THE FOOD DOUBLE CUP")
+				for i in range(len(CUSTOMdoubleFoodCup)):
+					input(f"\n\nTrack {i+1}: \n{CUSTOMdoubleFoodCup[i]}")
 
 def statRetriever():
 	statType = int(input("Would you like the stats of a:\n\t1. Kart\n\t2. Wheel\n\t3. Glider\n\t4. Character\nEnter your number here: "))

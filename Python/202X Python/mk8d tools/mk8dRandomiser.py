@@ -227,45 +227,58 @@ CUSTOMdoubleFoodCup = [
 	'Crossing Cup: Cheese Land',
 	'Leaf Cup: Sherbet Land',
 	'Golden Dash Cup: Choco Mountain',
-	'Lucky Cat Cup: Shroom Ridge',
 	'Turnip Cup: Kalimari Desert',
 	'Propeller Cup: Mushroom Gorge',
+	'Propeller Cup: Sky High Sundae'
 	'Rock Cup: Maple Treeway'
 	]
 
-CUSTOMtinyCups = []
+CUSTOMsingleCups = []
 
-CUSTOMtinyWaterCup = {
+CUSTOMsingleWaterCup = {
 	"Name": 'Water Cup',
 	"Track 1": 'Mushroom Cup: Water Park',
 	"Track 2": 'Star Cup: Dolphin Shoals',
-	"Track 3": 'Shell Cup: Cheep Cheep Beach'
+	"Track 3": 'Shell Cup: Cheep Cheep Beach',
+	"Track 4": 'Rock Cup: Boo Lake'
 }
-CUSTOMtinyCups.append(CUSTOMtinyWaterCup) # i couldn't think of a neater way to this i'm so sorry if anyone finds this please lmk a better way
+CUSTOMsingleCups.append(CUSTOMsingleWaterCup) # i couldn't think of a neater way to this i'm so sorry if anyone finds this please lmk a better way
 
-CUSTOMtinyDesertCup = {
+CUSTOMsingleDesertCup = {
 	"Name": 'Desert Cup',
 	"Track 1": 'Banana Cup: Dry Dry Desert',
 	"Track 2": 'Crossing Cup: Cheese Land',
-	"Track 3": 'Special Cup: Bone Dry Dunes'
+	"Track 3": 'Special Cup: Bone Dry Dunes',
+	"Track 4": 'Turnip Cup: Kalimari Desert'
 }
-CUSTOMtinyCups.append(CUSTOMtinyDesertCup)
+CUSTOMsingleCups.append(CUSTOMsingleDesertCup)
 
-CUSTOMtinyIceCup = {
+CUSTOMsingleIceCup = {
 	"Name": 'Ice Cup',
 	"Track 1": 'Crossing Cup: Animal Crossing (Winter ZR)',
 	"Track 2":'Leaf Cup: Sherbet Land',
-	"Track 3": 'Triforce Cup: Ice Ice Outpost'
+	"Track 3": 'Triforce Cup: Ice Ice Outpost',
+	"Track 4": 'Propeller Cup: Snow Land'
 	}
-CUSTOMtinyCups.append(CUSTOMtinyIceCup)
+CUSTOMsingleCups.append(CUSTOMsingleIceCup)
 
-CUSTOMtinyForestCup = {
+CUSTOMsingleForestCup = {
 	"Name": 'Forest Cup',
 	"Track 1": 'Banana Cup: DK Jungle',
 	"Track 2": 'Mushroom Cup: Thwomp Ruins',
-	"Track 3": 'Crossing Cup: Wild Woods'
+	"Track 3": 'Crossing Cup: Wild Woods',
+	"Track 4": 'Rock Cup: Maple Treeway'
 }
-CUSTOMtinyCups.append(CUSTOMtinyForestCup)
+CUSTOMsingleCups.append(CUSTOMsingleForestCup)
+
+CUSTOMsingleRainbowCup = {
+	"Name": 'Rainbow Cup',
+	"Track 1": 'Special Cup: Rainbow Road (MK8D)',
+	"Track 2": 'Lightning Cup: Rainbow Road (N64)',
+	"Track 3": 'Triforce Cup: Rainbow Road (SNES)',
+	"Track 4": 'Moon Cup: Rainbow Road (3DS)'
+}
+CUSTOMsingleCups.append(CUSTOMsingleRainbowCup)
 
 def randomiser():
 	# variable setup
@@ -288,23 +301,24 @@ def randomiser():
 		print("Press enter to continue to the tracks, and then again to reveal the next track: ") # had to add the if statement so that it would only show up now cause it wouldn't make sense otherwise
 		input()
 	if customCupQuery == 'N':
+		print('\n' * 1000)
 		for x in range(numOfTracks):
 			trackRoll = choice(track)
-			if trackRoll in duplicates: trackRoll = choice(track)
+			if trackRoll in duplicates: trackRoll = choice(track) # removes duplicates by checking if they have already been added to the array, and then rerolling if it has
 			duplicates.append(trackRoll)
 			print(f"\nTrack {x+1}\n{trackRoll}")
 			if x+1 != numOfTracks: input()
-		print(len(duplicates))
 	elif customCupQuery == 'Y':
-		cupLengthQuery = input("Enter the length of cup you would like to play [[T]iny (3), [S]ingle (4), [D]ouble (8)]: ").upper()
-		if cupLengthQuery == 'T':
+		cupLengthQuery = input("Enter the length of cup you would like to play [[S]ingle (4), [D]ouble (8)]: ").upper()
+		if cupLengthQuery == 'S':
 			print("Enter the number corresponding to one of the following cups > ")
-			for i in range(len(CUSTOMtinyCups)): print(f"\t{i+1}. {CUSTOMtinyCups[i]['Name']}")
+			for i in range(len(CUSTOMsingleCups)): print(f"\t{i+1}. {CUSTOMsingleCups[i]['Name']}")
 			cupChoice = int(input("> "))
-			print('\n'*1000 + f"THE TINY {CUSTOMtinyCups[cupChoice-1]['Name'].upper()}")
-			for i in range(len(CUSTOMtinyCups[0])-1): input(f"\nTrack {i+1}\n{CUSTOMtinyCups[cupChoice-1][f'Track {i+1}']}")
+			print('\n'*1000 + f"THE {CUSTOMsingleCups[cupChoice-1]['Name'].upper()}")
+			for i in range(len(CUSTOMsingleCups[0])-1): input(f"\nTrack {i+1}\n{CUSTOMsingleCups[cupChoice-1][f'Track {i+1}']}")
 		if cupLengthQuery == 'D':
-			print("We only have one double cup currently: \nTHE FOOD DOUBLE CUP")
+			print("We only have one double cup currently:")
+			print('\n' * 1000 + "THE FOOD DOUBLE CUP")
 			for i in range(len(CUSTOMdoubleFoodCup)):
 				input(f"\n\nTrack {i+1}: \n{CUSTOMdoubleFoodCup[i]}")
 

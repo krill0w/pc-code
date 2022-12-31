@@ -1,7 +1,7 @@
 # import packages
 from random import choice
 import pandas as pd
-import os
+from os import system
 from time import sleep
 
 # the big bois
@@ -280,7 +280,7 @@ CUSTOMsingleRainbowCup = {
 	"Track 3": 'Triforce Cup: Rainbow Road (SNES)',
 	"Track 4": 'Moon Cup: Rainbow Road (3DS)'
 }
-CUSTOMsingleCups.append(CUSTOMsingleRainbowCup)
+CUSTOMsingleCups.append(CUSTOMsingleRainbowCup) # this cup might end up having to be changed to a space cup or something of that ilk if/when more rainbow road tracks get added because it won't get to 8
 
 def randomiser():
 	# variable setup
@@ -294,16 +294,16 @@ def randomiser():
 		loopCtrl = 2
 		try:
 			players = int(input("Enter the number of players [1-4] >  "))
-			if players > 4 or players < 1:
-				print("That number was not in the range provided, please try again.")
-				sleep(2)
-				os.system("clear")
-				loopCtrl = 1
-			elif players >= 1 and players <= 4:
-				loopCtrl = 3
 		except ValueError:
 			print("That wasn't a number, please try again.")
 			loopCtrl = 1
+		else:
+			if players > 4 or players < 1:
+				print("That number is not in the range provided, please try again.")
+				sleep(1)
+				system("clear")
+				loopCtrl = 1
+			else: loopCtrl = 3
 
 	while loopCtrl == 3:
 		customCupQuery = str(input("Would you like to use one of our custom cups? [Y, N] > ")).upper() #! stopped here

@@ -282,11 +282,18 @@ CUSTOMsingleRainbowCup = {
 }
 CUSTOMsingleCups.append(CUSTOMsingleRainbowCup) # this cup might end up having to be changed to a space cup or something of that ilk if/when more rainbow road tracks get added because it won't get to 8
 
+
+def reset(time, ctrlValue):
+	sleep(time)
+	system("clear")
+	loopCtrl = ctrlValue
+
 def randomiser():
 	# variable setup
 	x = 0
 	duplicates = []
 	loopCtrl = 1
+	trackNum = [4, 6, 8, 12, 16, 24, 32, 48]
 
 	# logic
 	print("Mario Kart 8 Deluxe Randomiser")
@@ -300,18 +307,28 @@ def randomiser():
 		else:
 			if players > 4 or players < 1:
 				print("That number is not in the range provided, please try again.")
-				sleep(1)
-				system("clear")
-				loopCtrl = 1
+				reset(1, 1)
 			else: loopCtrl = 3
 
 	while loopCtrl == 3:
-		customCupQuery = str(input("Would you like to use one of our custom cups? [Y, N] > ")).upper() #! stopped here
+		loopCtrl = 2
+		customCupQuery = str(input("Would you like to use one of our custom cups? [Y, N] > ")).upper()
 		if customCupQuery not in ('Y', 'N'):
 			print("That isn't a valid option, please try again")
 			sleep(2)
 			loopCtrl = 3
-		if customCupQuery == 'N': numOfTracks = int(input("Enter the number of tracks you are playing [4, 6, 8, 12, 16, 24, 32, 48] > "))
+		elif customCupQuery == 'N':
+			loopCtrl = 4
+			while loopCtrl == 4:
+				loopCtrl = 2
+				numOfTracks = int(input(f"Enter the number of tracks you are playing {trackNum} > "))
+				if numOfTracks not in trackNum:
+					print("That is not one of the options, please try again.")
+					sleep(1)
+					system("clear")
+					loopCtrl = 4
+
+	while loopCtrl == 4:
 		while x != players:
 			x += 1
 			characterRoll = choice(character)

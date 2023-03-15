@@ -48,6 +48,7 @@ character = [
 		'Villager Girl',
 		'Isabelle',
 		'Mii',
+		'Birdo',
 	]
 kart = [
 		'Standard Kart',
@@ -218,7 +219,17 @@ track = [
 		'Moon Cup: Berlin Byways',
 		'Moon Cup: Peach Gardens',
 		'Moon Cup: Merry Mountain',
-		'Moon Cup: Rainbow Road'
+		'Moon Cup: Rainbow Road',
+
+		'Fruit Cup: Amsterdam Drift',
+		'Fruit Cup: Riverside Park',
+		'Fruit Cup: DK\'s Snowboard Cross',
+		'Fruit Cup: Yoshi\'s Island',
+
+		'Boomerang Cup: Bangkok Rush',
+		'Boomerang Cup: Mario Circuit',
+		'Boomerang Cup: Waluigi Stadium',
+		'Boomerang Cup: Singapore Speedway'
 	]
 
 

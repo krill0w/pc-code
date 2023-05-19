@@ -338,8 +338,11 @@ def randomiser():
 					sleep(1)
 					system("clear")
 					loopCtrl = 4
+				else:
+					loopCtrl = 5
 
-	while loopCtrl == 4:
+
+	while loopCtrl == 5:
 		while x != players:
 			x += 1
 			characterRoll = choice(character)
@@ -358,6 +361,7 @@ def randomiser():
 				duplicates.append(trackRoll)
 				print(f"\nTrack {x+1}\n{trackRoll}")
 				if x+1 != numOfTracks: input()
+			loopCtrl = 4
 		elif customCupQuery == 'Y':
 			cupLengthQuery = input("Enter the length of cup you would like to play [[S]ingle (4), [D]ouble (8)]: ").upper()
 			if cupLengthQuery == 'S':
@@ -434,6 +438,7 @@ print("Mario Kart 8 Deluxe Toolkit")
 tool = int(input("Which tool would you like to use?\n\t1. Randomiser\n\t2. Stat Viewer\n\t3. Builder\n>  "))
 if tool == 1:
 	randomiser()
+	input()
 elif tool == 2:
 	statRetriever()
 elif tool == 3:

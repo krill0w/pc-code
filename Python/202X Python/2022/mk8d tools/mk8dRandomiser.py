@@ -233,7 +233,6 @@ track = [
 ]
 
 # Custom Cups
-
 CUSTOMdoubleFoodCup = [
 	'Mushroom Cup: Sweet Sweet Canyon',
 	'Crossing Cup: Cheese Land',
@@ -246,7 +245,6 @@ CUSTOMdoubleFoodCup = [
 ]
 
 CUSTOMsingleCups = []
-
 CUSTOMsingleWaterCup = {
 	"Name": 'Water Cup',
 	"Track 1": 'Mushroom Cup: Water Park',
@@ -254,7 +252,7 @@ CUSTOMsingleWaterCup = {
 	"Track 3": 'Shell Cup: Cheep Cheep Beach',
 	"Track 4": 'Rock Cup: Boo Lake'
 }
-CUSTOMsingleCups.append(CUSTOMsingleWaterCup)  # i couldn't think of a neater way to this i'm so sorry if anyone finds this please lmk a better way
+CUSTOMsingleCups.append(CUSTOMsingleWaterCup)# i couldn't think of a neater way to this i'm so sorry if anyone finds this please lmk a better way
 
 CUSTOMsingleDesertCup = {
 	"Name": 'Desert Cup',

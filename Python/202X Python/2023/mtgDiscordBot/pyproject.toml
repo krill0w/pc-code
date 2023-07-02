@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mtgdiscordbot"
+version = "0.1.0"
+description = ""
+authors = ["traditionallimb <dom@kalowe.me.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scrython = "^1.11.0"
+nextcord = "^2.4.2"
+mtgsdk = "^1.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

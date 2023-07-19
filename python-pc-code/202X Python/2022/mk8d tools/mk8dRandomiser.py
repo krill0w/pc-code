@@ -229,7 +229,17 @@ track = [
 	'Boomerang Cup: Bangkok Rush',
 	'Boomerang Cup: Mario Circuit',
 	'Boomerang Cup: Waluigi Stadium',
-	'Boomerang Cup: Singapore Speedway'
+	'Boomerang Cup: Singapore Speedway',
+
+	'Feather Cup: Athens Dash',
+	'Feather Cup: Daisy Cruiser',
+	'Feather Cup: Moonview Highway'
+	'Feather Cup: Squeaky Clean Sprint',
+
+	'Cherry Cup: Los Angeles Laps',
+	'Cherry Cup: Sunset Wilds',
+	'Cherry Cup: Koopa Cape',
+	'Cherry Cup: Vancouver Velocity'
 ]
 
 # Custom Cups

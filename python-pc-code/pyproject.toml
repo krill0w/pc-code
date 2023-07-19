@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-pc-code"
+version = "0.1.0"
+description = ""
+authors = ["traditionallimb <dom@kalowe.me.uk>"]
+readme = "README.md"
+packages = [{include = "python_pc_code"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -233,7 +233,7 @@ track = [
 
 	'Feather Cup: Athens Dash',
 	'Feather Cup: Daisy Cruiser',
-	'Feather Cup: Moonview Highway'
+	'Feather Cup: Moonview Highway',
 	'Feather Cup: Squeaky Clean Sprint',
 
 	'Cherry Cup: Los Angeles Laps',

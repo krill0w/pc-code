@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -12,5 +12,11 @@
         android:text="Home Fragment"
         android:textSize="30sp"
         android:layout_centerInParent="true"
-        android:textColor="@color/lavender"/>
-</RelativeLayout>
+        android:textColor="@color/black"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBottomOf="parent"
+
+</androidx.constraintlayout.widget.ConstraintLayout>

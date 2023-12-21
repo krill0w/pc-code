@@ -49,6 +49,13 @@ character = [
 	'Isabelle',
 	'Mii',
 	'Birdo',
+	'Petey Piranha',
+	'Wiggler',
+	'Kamek',
+	'Peachette',
+	'Diddy Kong',
+	'Funky Kong',
+	'Pauline'
 ]
 kart = [
 	'Standard Kart',
@@ -240,6 +247,16 @@ track = [
 	'Cherry Cup: Sunset Wilds',
 	'Cherry Cup: Koopa Cape',
 	'Cherry Cup: Vancouver Velocity'
+	
+	'Acorn Cup: Rome Avanti',
+	'Acorn Cup: DK Mountain',
+	'Acorn Cup: Daisy Circuit',
+	'Acorn Cup: Piranha Plant Cove',
+
+	'Spiny Cup: Madrid Drive',
+	'Spiny Cup: Rosalina\'s Ice World',
+	'Spiny Cup: Bowser Castle 3',
+	'Spiny Cup: Rainbow Road'
 ]
 
 # Custom Cups

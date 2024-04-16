@@ -1,0 +1,9 @@
+todo:
+- find highest total number of each type of ball from each game
+    - remove game id info
+    - split array into pulls (seperated by ;)
+    - split remaining info into dictionary (?)
+        - {'b': n1, 'r': n2, 'g': n3}
+    - compare dictionary values to the limits
+- eliminate all games that don't match the criteria
+- find id total

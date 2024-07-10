@@ -1,6 +1,6 @@
 import pyautogui, time
 time.sleep(5)
-f= open('e:/Creativeness Productions/Coding/2020 Python/spam-y things/beemovie.txt', 'r')
+f= open('D:\Coding\pc-code\Python\\202X Python\spam-y things\\beemovie.txt', 'r')
 for line in f:
   pyautogui.typewrite(line)
   pyautogui.press("enter")

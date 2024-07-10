@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83c2b94f-4ea8-4b3d-ac2d-629c065313e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/202X Python/2023/insertionSort.py" beforeDir="false" afterPath="$PROJECT_DIR$/202X Python/2023/insertionSort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +25,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2SmdejjuXp4QarQtuHK0JMFl3ZB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,7 +41,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/dom/Documents/Coding/pc-code/python-pc-code",
+    "last_opened_file_path": "D:/Coding/pc-code/Python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1689755788233</updated>
       <workItem from="1695724949143" duration="4158000" />
+      <workItem from="1701993774123" duration="22000" />
+      <workItem from="1701993826691" duration="45000" />
     </task>
     <servers />
   </component>

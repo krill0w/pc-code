@@ -1,135 +1,40 @@
-# import packages
 from random import choice
 import pandas as pd
 from os import system
 from time import sleep
 
-# the big bois
-character = [
-	'Mario',
-	'Luigi',
-	'Peach',
-	'Daisy',
-	'Rosalina',
-	'Tanooki Mario',
-	'Cat Peach',
-	'Yoshi',
-	'Toad',
-	'Koopa Troopa',
-	'Shy Guy',
-	'Lakitu',
-	'Toadette',
-	'King Boo',
-	'Baby Mario',
-	'Baby Luigi',
-	'Baby Peach',
-	'Baby Daisy',
-	'Baby Rosalina',
-	'Metal Mario',
-	'Pink Gold Peach',
-	'Wario',
-	'Waluigi',
-	'Donkey Kong',
-	'Bowser',
-	'Dry Bones',
-	'Bowser Jr.',
-	'Dry Bowser',
-	'Lemmy',
-	'Larry',
-	'Wendy',
-	'Ludwig',
-	'Iggy',
-	'Roy',
-	'Morton',
-	'Inkling Girl',
-	'Inkling Boy',
-	'Link',
-	'Villager Boy',
-	'Villager Girl',
-	'Isabelle',
-	'Mii',
-	'Birdo',
+# The big bois
+characters = [
+    'Mario', 'Luigi', 'Peach', 'Daisy', 'Rosalina', 'Tanooki Mario', 'Cat Peach', 'Yoshi',
+    'Toad', 'Koopa Troopa', 'Shy Guy', 'Lakitu', 'Toadette', 'King Boo', 'Baby Mario',
+    'Baby Luigi', 'Baby Peach', 'Baby Daisy', 'Baby Rosalina', 'Metal Mario', 'Pink Gold Peach',
+    'Wario', 'Waluigi', 'Donkey Kong', 'Bowser', 'Dry Bones', 'Bowser Jr.', 'Dry Bowser',
+    'Lemmy', 'Larry', 'Wendy', 'Ludwig', 'Iggy', 'Roy', 'Morton', 'Inkling Girl', 'Inkling Boy',
+    'Link', 'Villager Boy', 'Villager Girl', 'Isabelle', 'Mii', 'Birdo'
 ]
-kart = [
-	'Standard Kart',
-	'Pipe Frame',
-	'Mach 8',
-	'Steel Diver',
-	'Cat Cruiser',
-	'Circuit Special',
-	'Tri-Speeder',
-	'Badwagon',
-	'Prancer',
-	'Buggybud',
-	'Landship',
-	'Bounder',
-	'Sports Coupé',
-	'GLA',
-	'W 25 Silver Arrow',
-	'300 SL Roadster',
-	'Blue Falcon',
-	'Tanooki Kart',
-	'B Dasher',
-	'Streetle',
-	'P-Wing',
-	'Koopa Clown',
-	'Standard Bike',
-	'Comet',
-	'Sport Bike',
-	'The Duke',
-	'Flame Rider',
-	'Varmint',
-	'Mr Scooty',
-	'Jet Bike',
-	'Yoshi Bike',
-	'Master Cycle',
-	'City Tripper',
-	'Standard Quad',
-	'Wild Wiggler',
-	'Teddy Buggy',
-	'Bone Rattler',
-	'Splat Buggy',
-	'Ink Striker',
+
+karts = [
+    'Standard Kart', 'Pipe Frame', 'Mach 8', 'Steel Diver', 'Cat Cruiser', 'Circuit Special',
+    'Tri-Speeder', 'Badwagon', 'Prancer', 'Buggybud', 'Landship', 'Bounder', 'Sports Coupé',
+    'GLA', 'W 25 Silver Arrow', '300 SL Roadster', 'Blue Falcon', 'Tanooki Kart', 'B Dasher',
+    'Streetle', 'P-Wing', 'Koopa Clown', 'Standard Bike', 'Comet', 'Sport Bike', 'The Duke',
+    'Flame Rider', 'Varmint', 'Mr Scooty', 'Jet Bike', 'Yoshi Bike', 'Master Cycle',
+    'City Tripper', 'Standard Quad', 'Wild Wiggler', 'Teddy Buggy', 'Bone Rattler', 'Splat Buggy',
+    'Ink Striker'
 ]
+
 wheels = [
-	'Normal',
-	'Monster',
-	'Roller',
-	'Slim',
-	'Slick',
-	'Metal',
-	'Button',
-	'Off-Road',
-	'Sponge',
-	'Woodden',
-	'Cushion',
-	'Normal Blue ',
-	'Funky Monster',
-	'Azure Roller',
-	'Crimson Slim',
-	'Cyber Slick',
-	'Retro Off-Road',
-	'GLA Wheels',
-	'Triforce Tyres',
-	'Ancient Tyres',
-	'Leaf Tyres'
+    'Normal', 'Monster', 'Roller', 'Slim', 'Slick', 'Metal', 'Button', 'Off-Road', 'Sponge',
+    'Wooden', 'Cushion', 'Normal Blue', 'Funky Monster', 'Azure Roller', 'Crimson Slim',
+    'Cyber Slick', 'Retro Off-Road', 'GLA Wheels', 'Triforce Tyres', 'Ancient Tyres', 'Leaf Tyres'
 ]
-glider = [
-	'Super Glider',
-	'Cloud Glider',
-	'Wario Wing',
-	'Waddle Wing',
-	'Peach Parasol',
-	'Parachute',
-	'Parafoil',
-	'Flower Glider',
-	'Bowser Kite',
-	'Plane Glider',
-	'MKTV Parafoil',
-	'Hylian Kite',
-	'Paraglider',
-	'Paper Glider',
+
+gliders = [
+    'Super Glider', 'Cloud Glider', 'Wario Wing', 'Waddle Wing', 'Peach Parasol', 'Parachute',
+    'Parafoil', 'Flower Glider', 'Bowser Kite', 'Plane Glider', 'MKTV Parafoil', 'Hylian Kite',
+    'Paraglider', 'Paper Glider'
 ]
+
 track = [
 	'Mushroom Cup: Mario Kart Stadium',
 	'Mushroom Cup: Water Park',
@@ -239,7 +144,17 @@ track = [
 	'Cherry Cup: Los Angeles Laps',
 	'Cherry Cup: Sunset Wilds',
 	'Cherry Cup: Koopa Cape',
-	'Cherry Cup: Vancouver Velocity'
+	'Cherry Cup: Vancouver Velocity',
+	
+  'Acorn Cup: Rome Avanti',
+	'Acorn Cup: DK Mountain',
+	'Acorn Cup: Daisy Circuit',
+	'Acorn Cup: Piranha Plant Cove',
+	
+  'Spiny Cup: Madrid Drive',
+	'Spiny Cup: Rosalina\'s Ice World',
+	'Spiny Cup: Bowser Castle 3',
+	'Spiny Cup: Rainbow Road'
 ]
 
 # Custom Cups
